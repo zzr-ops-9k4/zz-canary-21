@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+URL="${FIGMA_MAKE_URL:-http://localhost:${PORT:-3000}}"
+for i in $(seq 1 60); do curl -sf "$URL/zzr650mk/verify" >/dev/null 2>&1 && exit 0; sleep 2; done
+  exit 1
+  
